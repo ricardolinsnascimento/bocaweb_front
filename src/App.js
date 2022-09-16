@@ -30,7 +30,7 @@ class App extends Component{
   }
   
   render(){
-    const {busca, odas} = this.state;
+    const {odas} = this.state;
     return (
       <section className = "container">      
         <Cabecalho/>
@@ -40,24 +40,17 @@ class App extends Component{
           buscaODA={this.buscaODA}
         />
 
-        {/* <div className = 'busca'>          
-          <input 
-            name='busca'
-            type ='text'
-            value={this.state.busca}             
-            placeholder='O que deseja buscar'
-            onChange={this.buscaODA}          
-          />
-        </div>
-        */}
         <div className = 'lista'>
         <p> {odas.length} odas </p>
           {odas.map(oda => (
-           <Lista
-              nome={oda.nome}
-              usuario={oda.usuario}
-              descricao={oda.descricao}
-           />
+            <div key={oda._id}>
+              <Lista
+                  id={oda._id}
+                  nome={oda.nome}
+                  usuario={oda.usuario}
+                  descricao={oda.descricao}
+              />
+            </div>
           ))}
         </div>
       </section>
