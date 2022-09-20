@@ -6,7 +6,8 @@ export const Busca = ({busca, buscaODA}) =>{
             type ='text'
             value={busca}             
             placeholder='O que deseja buscar'
-            onChange={buscaODA}          
+            onChange={buscaODA}     
+              
           />
         </div>                    
     )
